@@ -22,26 +22,32 @@ export default function Login() {
   };
 
   return (
-    <div className="container py-4">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit} className="card card-body">
+   
+    <div className="container py-5 text-center">
+      <h2 style={{ fontFamily: 'Lobster, cursive', color: '#ff6f61', marginBottom: '1rem' }}>
+  Your Sweet Adventure Continues!
+</h2>
+      <h1 className="mb-4 text-center ">Login Now</h1>
+      <form onSubmit={handleSubmit} className="card card-body p-4 mx-auto" style={{ maxWidth: "400px" }}>
         <input
+      
           type="email"
-          className="form-control mb-2"
+          className="form-control mb-3 text-center"
           placeholder="Email"
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
         <input
           type="password"
-          className="form-control mb-2"
+          className="form-control mb-2 text-center"
           placeholder="Password"
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
         <button className="btn btn-primary w-100">Login</button>
       </form>
-      <p className="mt-3">
+      <p className="mt-3 text-center">
         Don’t have an account? <Link to="/register">Register</Link>
       </p>
     </div>
+    
   );
 }
