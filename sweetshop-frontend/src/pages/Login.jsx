@@ -15,7 +15,12 @@ export default function Login() {
       const res = await API.post("/auth/login", form);
       if (res.data.token) {
         login(res.data);
-        navigate("/");
+        // Conditional redirect based on user's admin status
+        if (res.data.user.isAdmin) {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
       }
     } catch {
       alert("Login failed. Check your credentials.");
@@ -38,7 +43,7 @@ export default function Login() {
   const cardStyles = {
     maxWidth: "400px",
     minWidth: "300px",
-    backgroundColor: "rgba(255, 255, 255, 0.7)", // Transparent white background
+    backgroundColor: "rgba(255, 255, 255, 0.7)",
   };
 
   return (

@@ -16,13 +16,21 @@ export default function AdminPanel({ refresh }) {
   };
 
   return (
-    <div className="mt-4 card card-body">
-      <h3>Add Sweet</h3>
+    <div className="p-2">
+      <h5 className="mb-3 text-secondary">Add Sweet</h5>
       <form onSubmit={handleAdd}>
-        <input name="name" className="form-control mb-2" placeholder="Name" />
-        <input name="category" className="form-control mb-2" placeholder="Category" />
-        <input name="price" type="number" className="form-control mb-2" placeholder="Price" />
-        <input name="quantity" type="number" className="form-control mb-2" placeholder="Quantity" />
+        <div className="mb-2">
+          <input name="name" className="form-control" placeholder="Name" required />
+        </div>
+        <div className="mb-2">
+          <input name="category" className="form-control" placeholder="Category" required />
+        </div>
+        <div className="mb-2">
+          <input name="price" type="number" className="form-control" placeholder="Price" required />
+        </div>
+        <div className="mb-3">
+          <input name="quantity" type="number" className="form-control" placeholder="Quantity" required />
+        </div>
         <button className="btn btn-success w-100">Add Sweet</button>
       </form>
     </div>

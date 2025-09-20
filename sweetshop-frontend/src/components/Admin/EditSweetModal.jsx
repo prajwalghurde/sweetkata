@@ -45,7 +45,7 @@ export default function EditSweetModal({ sweet, onClose, refresh }) {
             </div>
             <div className="modal-footer">
               <button type="submit" className="btn btn-primary">Save</button>
-              <button type="button" className="btn btn-warning" onClick={handleRestock}>Restock</button>
+              <button type="button" className="btn btn-info" onClick={handleRestock}>Restock</button>
               <button type="button" className="btn btn-secondary" onClick={onClose}>Close</button>
             </div>
           </form>
