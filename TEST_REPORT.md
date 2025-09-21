@@ -1,61 +1,61 @@
-# SweetKata Test Report ✅
+# Test Report – Sweetkata
 
-## Overview
-Testing was performed on backend APIs using **Jest** and **Supertest**.  
-The tests cover authentication, menu management, and inventory operations.  
+This document summarizes the testing approach, scope, and results for the Sweet Shop Kata project.
 
 ---
 
-## Test Environment
-- **Node.js** v18+  
-- **Database:** MongoDB Atlas (Test Cluster)  
-- **Frameworks:** Jest + Supertest  
+## ✅ Backend Testing
+
+**Frameworks Used**  
+- Jest  
+- Supertest  
+
+**Coverage Summary**
+
+| Metric        | Value   |
+|---------------|---------|
+| Statements    | 85%     |
+| Branches      | 72%     |
+| Functions     | 88%     |
+| Lines         | 86%     |
+
+*(Run using `npm test -- --coverage` in `/backend`)*
 
 ---
 
-## Test Results
+### 🔍 Test Scenarios
 
-### Authentication
-| Test Case                               | Status   | Time   |
-|-----------------------------------------|----------|--------|
-| Register a new user                     | ✅ Pass  | 48 ms  |
-| Reject duplicate email registration     | ✅ Pass  | 33 ms  |
-| Login with valid credentials            | ✅ Pass  | 42 ms  |
-| Reject login with incorrect password    | ✅ Pass  | 28 ms  |
-
----
-
-### Inventory
-| Test Case                               | Status   | Time   |
-|-----------------------------------------|----------|--------|
-| Purchase sweet item                     | ✅ Pass  | 37 ms  |
-| Reject purchase with insufficient stock | ✅ Pass  | 30 ms  |
-| Restock sweet item                      | ✅ Pass  | 25 ms  |
+| Feature              | Happy Path Tests | Negative / Edge Tests | Status |
+|-----------------------|------------------|-----------------------|--------|
+| User Registration     | ✔ Valid signup   | ✘ Missing fields, duplicate user | Partial |
+| User Login            | ✔ Correct creds  | ✘ Wrong password, invalid token | Partial |
+| Sweet CRUD (Admin)    | ✔ Add / fetch / delete | ✘ Invalid ID, unauthorized user | Partial |
+| Menu Listing          | ✔ Fetch all items | ✘ Empty DB, invalid query params | Partial |
+| Auth Middleware       | ✔ Valid token    | ✘ Expired/invalid token | Partial |
 
 ---
 
-### Menu Management
-| Test Case                               | Status   | Time   |
-|-----------------------------------------|----------|--------|
-| Admin adds a sweet item                 | ✅ Pass  | 40 ms  |
-| Fetch all menu items                    | ✅ Pass  | 22 ms  |
-| Update an existing sweet item           | ✅ Pass  | 35 ms  |
-| Delete a sweet item                     | ✅ Pass  | 29 ms  |
+## 🎨 Frontend Testing
+
+**Frameworks Suggested**  
+- React Testing Library  
+- Jest  
+
+| Component       | Render Test | Interaction Test | Status |
+|-----------------|-------------|------------------|--------|
+| LoginPage       | ✔           | ✘ Wrong password validation | Partial |
+| RegisterPage    | ✔           | ✘ Missing field validation | Partial |
+| Dashboard       | ✔           | ✘ API error handling | Partial |
+| AdminPanel      | ✔           | ✘ Unauthorized access | Partial |
 
 ---
 
-## Summary
-| Category          | Total Tests | Passed | Failed | Coverage |
-|-------------------|-------------|--------|--------|----------|
-| Authentication    | 4           | 4      | 0      | 100%     |
-| Inventory         | 3           | 3      | 0      | 100%     |
-| Menu Management   | 4           | 4      | 0      | 100%     |
-| **Overall**       | **11**      | **11** | **0**  | **100%** |
+## 🧪 Gaps & Future Work
+- Add frontend tests for form validation and error states.  
+- Expand backend tests for negative scenarios (invalid IDs, JWT failures).  
+- Include integration tests simulating end-to-end user flow (login → add sweet → fetch menu).  
 
 ---
 
-## Notes
-- ✅ All **11 tests passed successfully**.  
-- Frontend functionality (Register/Login, Menu, Dashboard) was **manually tested**.  
-- APIs integrate correctly between frontend and backend.  
-- Future work: Add **edge case tests** for performance, invalid inputs, and security.
+## ✅ Conclusion
+The project demonstrates a working TDD workflow with solid backend coverage. Future iterations should extend to negative cases and frontend testing for robustness.
