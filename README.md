@@ -96,6 +96,31 @@ Frontend (Vercel): https://sweetkata.vercel.app/
 
 Backend (Render): https://sweetkata.onrender.com/
 
+
+---
+
+## 🧪 Test-Driven Development (TDD) Approach
+
+This project was developed using **TDD principles** following the **Red–Green–Refactor** cycle:
+
+1. **Red** → Write a failing test for a new feature (e.g., user registration, login).  
+2. **Green** → Implement the minimum code required to make the test pass.  
+3. **Refactor** → Clean up code, extract services, and improve structure while keeping all tests passing.
+
+### 🔍 Example Workflow
+- Wrote failing test for **User Registration** (`should create a new user when valid data is provided`).  
+- Implemented controller + model changes → test turned green.  
+- Refactored logic into a service to improve modularity.  
+
+### 📊 Commit History
+Commits were made incrementally to reflect TDD steps:
+- Add failing test → Implement feature → Refactor.
+
+### 📝 Reporting
+- Test execution results are documented in [`TEST_REPORT.md`](./TEST_REPORT.md).  
+- Coverage summary included for backend, with gaps identified for future work.
+
+
 License
 This project is submitted for assessment purposes.
 Please follow AI usage policy guidelines.
