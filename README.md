@@ -59,13 +59,12 @@ Runs the backend server on port 5000 by default.
 Make sure .env includes:
 
 ini
-Copy code
 MONGO_URI=<your_mongodb_uri>
 JWT_SECRET=<your_jwt_secret>
 PORT=5000
 Frontend
 bash
-Copy code
+
 cd frontend
 npm install
 npm start
@@ -75,17 +74,8 @@ Update API endpoints in frontend to point to backend (e.g., http://localhost:500
 For production build:
 
 bash
-Copy code
+
 npm run build
-AI Assistance
-Tools Used
-ChatGPT → Generated backend boilerplate, controllers, deployment guidance.
-
-GitHub Copilot → Assisted with frontend forms, routing, and test stubs.
-
-Reflection
-AI tools accelerated development by reducing boilerplate and suggesting solutions.
-All code was manually reviewed for correctness and security.
 
 Testing
 Backend tests were created using Jest & Supertest.
@@ -120,9 +110,3 @@ Commits were made incrementally to reflect TDD steps:
 - Test execution results are documented in [`TEST_REPORT.md`](./TEST_REPORT.md).  
 - Coverage summary included for backend, with gaps identified for future work.
 
-
-License
-This project is submitted for assessment purposes.
-Please follow AI usage policy guidelines.
-
-Co-authored-by: ChatGPT noreply@openai.com
